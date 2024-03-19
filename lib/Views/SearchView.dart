@@ -1,4 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+
+import 'package:dio/dio.dart';
+
+import 'package:weatherapp/Service/Weather_Serviece.dart';
+import 'package:weatherapp/models/WeatherModel.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
@@ -13,7 +20,11 @@ class SearchView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Center(
           child: TextField(
-            onSubmitted: (value) {},
+            onSubmitted: (value) async {
+              WeatherModel weatherModel =
+                  await Weather_Serviece(Dio()).getWeather(cityName: value);
+              print(weatherModel.cityName);
+            },
             decoration: InputDecoration(
               hintText: "Enter City Name",
               suffixIcon: const Icon(Icons.search),

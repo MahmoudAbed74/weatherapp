@@ -12,14 +12,14 @@ class WeatherModel {
     );
   }
 
-  final String cityName;
-  final String countryName;
-  final String data;
-  final String img;
-  final double temp;
-  final double mixTemp;
-  final double minTemp;
-  final double weatherCondition;
+  final String? cityName;
+  final String? countryName;
+  final String? data;
+  final String? img;
+  final double? temp;
+  final double? mixTemp;
+  final double? minTemp;
+  final double? weatherCondition;
 
   WeatherModel({
     required this.cityName,
