@@ -9,7 +9,7 @@ class Weather_Serviece {
   final String apiKey = "3ec2be19f9d44708bee00343241903";
   Future<WeatherModel> getWeather({required String cityName}) async {
     Response response = await dio
-        .get("$baseUrl/future.json?key=$apiKey&q=$cityName&dt=2024-04-18");
+        .get("$baseUrl/future.json?key=$apiKey&q=$cityName&dt=2024-04-19");
     try {
       WeatherModel weatherModel = WeatherModel.fromJson(response.data);
       return weatherModel;
@@ -17,9 +17,9 @@ class Weather_Serviece {
       final String messageError = e.response?.data["error"]["message"] ??
           "oops , there was an error , try again";
 
-      throw (messageError);
+      throw Exception(messageError);
     } catch (e) {
-      throw Exception ("$e and oops , there was an error , try again");
+      throw Exception(" oops , there was an error , try again");
     }
   }
 }
