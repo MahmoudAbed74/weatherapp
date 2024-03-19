@@ -1,13 +1,16 @@
 class WeatherModel {
-  WeatherModel.fromJson(Map<String, dynamic> json)
-      : cityName = json['location']['name'],
-        countryName = json['location']['name'],
-        data = json['location']['localtime'],
-        temp = json['forecast']['forecastday'][0]['day']['avgtemp_c'],
-        mixTemp = json['weather'][0]['day']['maxtemp_c'],
-        minTemp = json['weather'][0]['day']['mintemp_c'],
-        weatherCondition = json['weather'][0]['day']['maxtemp_c'],
-        img = json['weather'][0]['day']['condition']['icon'];
+  factory WeatherModel.fromJson(Map<String, dynamic> json) {
+    return WeatherModel(
+      cityName: json['location']['name'],
+      countryName: json['location']['country'],
+      data: json['location']['localtime'],
+      temp: json['forecast']['forecastday'][0]['day']['avgtemp_c'],
+      mixTemp: json['forecast']['forecastday'][0]['day']['maxtemp_c'],
+      minTemp: json['forecast']['forecastday'][0]['day']['mintemp_c'],
+      weatherCondition: json['forecast']['forecastday'][0]['day']['maxtemp_c'],
+      img: json['forecast']['forecastday'][0]['day']['condition']['icon'],
+    );
+  }
 
   final String cityName;
   final String countryName;
@@ -18,12 +21,14 @@ class WeatherModel {
   final double minTemp;
   final double weatherCondition;
 
-  WeatherModel(this.countryName,
-      {required this.cityName,
-      required this.data,
-      required this.temp,
-      required this.img,
-      required this.mixTemp,
-      required this.minTemp,
-      required this.weatherCondition});
+  WeatherModel({
+    required this.cityName,
+    required this.countryName,
+    required this.data,
+    required this.temp,
+    required this.mixTemp,
+    required this.minTemp,
+    required this.weatherCondition,
+    required this.img,
+  });
 }

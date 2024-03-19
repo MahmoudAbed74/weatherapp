@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:weatherapp/Views/SearchView.dart';
-import 'package:weatherapp/widgets/NoFindWeatherData.dart';
 import 'package:weatherapp/widgets/Weather_Info_Body.dart';
 
 class HomePageView extends StatelessWidget {
