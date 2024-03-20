@@ -6,7 +6,7 @@ import 'package:weatherapp/Cubits/Get_Weather_Cubits/GetWeatherCubit.dart';
 import 'package:weatherapp/Cubits/Get_Weather_Cubits/GetWeatherState.dart';
 import 'package:weatherapp/Views/SearchView.dart';
 import 'package:weatherapp/widgets/NoFindWeatherData.dart';
-import 'package:weatherapp/widgets/WeatherInfoBody.dart';
+import 'package:weatherapp/widgets/Weather_Info_Body.dart';
 
 class HomePageView extends StatelessWidget {
   const HomePageView({super.key});
