@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:weatherapp/Cubits/Get_Weather_Cubits/GetWeatherCubit.dart';
+import 'package:weatherapp/Cubits/Get_Weather_Cubits/GetWeatherState.dart';
 import 'package:weatherapp/Views/SearchView.dart';
 import 'package:weatherapp/widgets/Weather_Info_Body.dart';
 
@@ -25,7 +29,10 @@ class HomePageView extends StatelessWidget {
           )
         ],
       ),
-      body: const Weather_Info_Body(),
+      body: BlocBuilder<GetWeaterCubit , GetWeatherState>(builder: (context, state) {
+
+        
+      } ,),
     );
   }
 }
