@@ -45,7 +45,7 @@ MaterialColor getThemeWeather(double? temp) {
     return Colors.yellow; // Warm
   } else if (temp > 10) {
     return Colors.green; // Mild
-  } else if (temp > 0) {
+  } else if (temp > 1) {
     return Colors.blue; // Cold
   } else {
     return Colors.blueGrey; // Very cold
