@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:weatherapp/Cubits/Get_Weather_Cubits/GetWeatherCubit.dart';
-import 'package:weatherapp/Cubits/Get_Weather_Cubits/GetWeatherState.dart';
 import 'package:weatherapp/Views/SearchView.dart';
+import 'package:weatherapp/models/WeatherModel.dart';
 import 'package:weatherapp/widgets/NoFindWeatherData.dart';
 import 'package:weatherapp/widgets/Weather_Info_Body.dart';
+
+import '../Cubits/Get_Weather_Cubits/GetWeatherState.dart';
 
 class HomePageView extends StatelessWidget {
   const HomePageView({super.key});
@@ -39,7 +41,9 @@ class HomePageView extends StatelessWidget {
               child: CircularProgressIndicator(),
             );
           } else if (state is WeatherSuccess_State) {
-            return const WeatherInfoBody();
+            return WeatherInfoBody(
+              weatherModel: state.weatherModel,
+            );
           } else {
             return const Center(
               child: Text("Error"),

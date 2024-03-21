@@ -10,7 +10,7 @@ class Weather_Serviece {
   Future<WeatherModel> getWeather({required String cityName}) async {
     try {
       Response response = await dio
-          .get("$baseUrl/future.json?key=$apiKey&q=$cityName&dt=2024-04-20");
+          .get("$baseUrl/forecast.json?key=$apiKey&q=$cityName");
 
       // Added null check for response.data
       if (response.data == null) {
