@@ -23,7 +23,7 @@ class WeatherInfoBody extends StatelessWidget {
     return Container(
       decoration:  BoxDecoration(
         gradient: LinearGradient(colors: [
-          getThemeWeather(weatherModel.temp)[200]!,
+          getThemeWeather(weatherModel.temp)[900]!,
           getThemeWeather(weatherModel.temp)[500]!,
         ],
         begin: Alignment.topCenter,
