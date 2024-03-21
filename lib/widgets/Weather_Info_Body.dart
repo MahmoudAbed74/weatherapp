@@ -7,11 +7,11 @@ import 'package:weatherapp/main.dart';
 import 'package:weatherapp/models/WeatherModel.dart';
 
 class WeatherInfoBody extends StatelessWidget {
-  const WeatherInfoBody({  
+  const WeatherInfoBody({
     required this.weatherModel,
     super.key,
   });
- final WeatherModel weatherModel ;
+  final WeatherModel weatherModel;
   @override
   Widget build(BuildContext context) {
     WeatherModel? weatherModel =
@@ -21,15 +21,13 @@ class WeatherInfoBody extends StatelessWidget {
         isHttps ? weatherModel.img! : "https:${weatherModel.img!}";
 
     return Container(
-      decoration:  BoxDecoration(
-        gradient: LinearGradient(colors: [
-          getThemeWeather(weatherModel.temp)[900]!,
-          getThemeWeather(weatherModel.temp)[500]!,
-        ],
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter
-        )
-      ),
+      decoration: BoxDecoration(
+          gradient: LinearGradient(colors: [
+        getThemeWeather(weatherModel.temp)[600]!,
+        getThemeWeather(weatherModel.temp)[500]!,
+        getThemeWeather(weatherModel.temp)[200]!,
+        getThemeWeather(weatherModel.temp)[50]!,
+      ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Column(
@@ -42,7 +40,7 @@ class WeatherInfoBody extends StatelessWidget {
             ),
             Text(
               weatherModel.countryName!,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
             const SizedBox(
               height: 10,
@@ -53,10 +51,6 @@ class WeatherInfoBody extends StatelessWidget {
                 height: 100,
                 fit: BoxFit.fill,
                 // color: const Color.fromARGB(255, 59, 85, 255),
-              ),
-              Text(
-                "Update Time : ${weatherModel.data!.hour} : ${weatherModel.data!.minute}",
-                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
               ),
               Column(
                 children: [
@@ -79,6 +73,10 @@ class WeatherInfoBody extends StatelessWidget {
             Text(
               "Temp: ${weatherModel.temp!.round().toString()}",
               style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+            ),
+            Text(
+              "Update Time: ${weatherModel.data!.hour}:${weatherModel.data!.minute}",
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ],
         ),

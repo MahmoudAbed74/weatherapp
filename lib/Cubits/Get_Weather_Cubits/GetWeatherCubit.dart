@@ -18,6 +18,7 @@ class GetWeaterCubit extends Cubit<GetWeatherState> {
     } on Exception catch (e) {
       print(e.toString());
       emit(WeatherFailure_State(messageError: e.toString()));
+      
     }
   }
 }

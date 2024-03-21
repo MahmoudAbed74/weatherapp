@@ -34,19 +34,19 @@ class MyApp extends StatelessWidget {
 
 MaterialColor getThemeWeather(double? temp) {
   if (temp == null) {
-    return Colors.blue;
+    return Colors.blue; // Default color if temperature is null
   }
-  if (temp > 30) {
-    return Colors.red;
+  if (temp > 35) {
+    return Colors.red; // Very hot
+  } else if (temp > 30) {
+    return Colors.orange; // Hot
   } else if (temp > 20) {
-    return Colors.orange;
+    return Colors.yellow; // Warm
   } else if (temp > 10) {
-    return Colors.yellow;
+    return Colors.green; // Mild
   } else if (temp > 0) {
-    return Colors.green;
-  } else if (temp > -10) {
-    return Colors.blue;
+    return Colors.blue; // Cold
   } else {
-    return Colors.blueGrey;
+    return Colors.blueGrey; // Very cold
   }
 }
